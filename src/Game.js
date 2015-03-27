@@ -23,7 +23,6 @@ Touch.Game.prototype = {
 		var touches = evt.changedTouches;
 
 		for (var i=0; i < touches.length; i++) {
-			alert("touchstart:"+i+"...");
 			ongoingTouches.push(copyTouch(touches[i]));
 			var color = colorForTouch(touches[i]);
 			ctx.beginPath();
