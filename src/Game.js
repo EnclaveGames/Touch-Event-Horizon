@@ -4,8 +4,8 @@ Touch.Game.prototype = {
 		// window.addEventListener("deviceorientation", this.handleOrientation, true);
 		// window.navigator.vibrate(100);
 		// var ongoingTouches = new Array();
-		// var el = document.getElementsByTagName("canvas")[0];
-		window.addEventListener("touchstart", this.handleStart, false);
+		var el = document.getElementsByTagName("canvas")[0];
+		el.addEventListener("touchstart", this.handleStart, false);
 		//el.addEventListener("touchmove", this.handleMove, false);
 		this.add.text(20, 20, 'Hello touch world', { font: "16px Arial", fill: "#fff" });
 	},
