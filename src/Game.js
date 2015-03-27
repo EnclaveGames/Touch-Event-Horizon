@@ -3,10 +3,10 @@ Touch.Game.prototype = {
 	create: function() {
 		// window.addEventListener("deviceorientation", this.handleOrientation, true);
 		// window.navigator.vibrate(100);
-		var ongoingTouches = new Array();
-		var el = document.getElementsByTagName("canvas")[0];
-		el.addEventListener("touchstart", this.handleStart, false);
-		el.addEventListener("touchmove", this.handleMove, false);
+		// var ongoingTouches = new Array();
+		// var el = document.getElementsByTagName("canvas")[0];
+		window.addEventListener("touchstart", function(){ alert("ble"); }, false);
+		// el.addEventListener("touchmove", this.handleMove, false);
 		this.add.text(20, 20, 'Hello touch world', { font: "16px Arial", fill: "#fff" });
 	},
 	update: function() {
@@ -17,7 +17,7 @@ Touch.Game.prototype = {
 		// this.game.debug.body(this.hole);
 	},
 	handleStart: function(evt){
-		evt.preventDefault();
+//		evt.preventDefault();
 		var el = document.getElementsByTagName("canvas")[0];
 		var ctx = el.getContext("2d");
 		alert("touchstart:"+i+"...");
