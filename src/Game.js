@@ -18,7 +18,6 @@ Touch.Game.prototype = {
 	},
 	handleStart: function(evt){
 //		evt.preventDefault();
-		alert("fu");
 		var el = document.getElementsByTagName("canvas")[0];
 		var ctx = el.getContext("2d");
 		var touches = evt.changedTouches;
