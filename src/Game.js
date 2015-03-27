@@ -3,7 +3,7 @@ Touch.Game.prototype = {
 	create: function() {
 		// window.addEventListener("deviceorientation", this.handleOrientation, true);
 		// window.navigator.vibrate(100);
-		// var ongoingTouches = new Array();
+		var ongoingTouches = new Array();
 		var el = document.getElementsByTagName("canvas")[0];
 		el.addEventListener("touchstart", this.handleStart, false);
 		//el.addEventListener("touchmove", this.handleMove, false);
@@ -36,6 +36,7 @@ Touch.Game.prototype = {
 
 			//ctx.beginPath();
     		//ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0,2*Math.PI, false);  // a circle at the start
+    		alert(color);
     		ctx.fillStyle = color;
     		ctx.fill();
     		//log("touchstart:"+i+".");
