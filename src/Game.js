@@ -5,8 +5,8 @@ Touch.Game.prototype = {
 		// window.navigator.vibrate(100);
 		// var ongoingTouches = new Array();
 		// var el = document.getElementsByTagName("canvas")[0];
-		window.addEventListener("touchstart", function(){ alert("ble"); }, false);
-		// el.addEventListener("touchmove", this.handleMove, false);
+		window.addEventListener("touchstart", this.handleStart, false);
+		//el.addEventListener("touchmove", this.handleMove, false);
 		this.add.text(20, 20, 'Hello touch world', { font: "16px Arial", fill: "#fff" });
 	},
 	update: function() {
@@ -18,9 +18,9 @@ Touch.Game.prototype = {
 	},
 	handleStart: function(evt){
 //		evt.preventDefault();
+		alert("fu");
 		var el = document.getElementsByTagName("canvas")[0];
 		var ctx = el.getContext("2d");
-		alert("touchstart:"+i+"...");
 		var touches = evt.changedTouches;
 
 		for (var i=0; i < touches.length; i++) {
