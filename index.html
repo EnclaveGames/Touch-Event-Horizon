@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Touch Event Horizon</title>
+	<style> body { margin: 0; background: #2B2E31; } </style>
+	<script src="src/phaser-arcade-physics.2.2.2.min.js"></script>
+	<script src="src/Boot.js"></script>
+	<script src="src/Preloader.js"></script>
+	<script src="src/MainMenu.js"></script>
+	<script src="src/Game.js"></script>
+</head>
+<body>
+<script>
+(function() {
+	var game = new Phaser.Game(480, 320, Phaser.CANVAS);
+	game.state.add('Boot', Touch.Boot);
+	game.state.add('Preloader', Touch.Preloader);
+	game.state.add('MainMenu', Touch.MainMenu);
+	game.state.add('Game', Touch.Game);
+	game.state.start('Boot');
+})();
+</script>
+</body>
+</html>
