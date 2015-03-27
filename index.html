@@ -13,7 +13,8 @@
 <body>
 <script>
 (function() {
-	var game = new Phaser.Game(480, 320, Phaser.CANVAS);
+	var game = new Phaser.Game(Math.ceil(320*window.innerWidth/window.innerHeight), 320, Phaser.CANVAS);
+	// var game = new Phaser.Game(480, 320, Phaser.CANVAS);
 	game.state.add('Boot', Touch.Boot);
 	game.state.add('Preloader', Touch.Preloader);
 	game.state.add('MainMenu', Touch.MainMenu);
