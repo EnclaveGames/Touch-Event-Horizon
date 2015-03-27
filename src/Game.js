@@ -7,7 +7,9 @@ Touch.Game.prototype = {
 		var el = document.getElementsByTagName("canvas")[0];
 		el.addEventListener("touchstart", this.handleStart, false);
 		//el.addEventListener("touchmove", this.handleMove, false);
-		this.add.text(20, 20, 'Hello touch world', { font: "16px Arial", fill: "#fff" });
+		this.helpText = this.add.text(20, 20, 'Hello touch world', { font: "16px Arial", fill: "#fff" });
+
+		this.helpText.setText("Text updated");
 	},
 	update: function() {
 		// update function
