@@ -4,23 +4,36 @@
 	<meta charset="utf-8" />
 	<title>Touch Event Horizon</title>
 	<style> body { margin: 0; background: #2B2E31; } </style>
-	<script src="src/phaser-arcade-physics.2.2.2.min.js"></script>
-	<script src="src/Boot.js"></script>
-	<script src="src/Preloader.js"></script>
-	<script src="src/MainMenu.js"></script>
-	<script src="src/Game.js"></script>
 </head>
 <body>
+
+<canvas width="480" height="320"></canvas>
+
 <script>
-(function() {
-	var game = new Phaser.Game(Math.ceil(320*window.innerWidth/window.innerHeight), 320, Phaser.CANVAS);
-	// var game = new Phaser.Game(480, 320, Phaser.CANVAS);
-	game.state.add('Boot', Touch.Boot);
-	game.state.add('Preloader', Touch.Preloader);
-	game.state.add('MainMenu', Touch.MainMenu);
-	game.state.add('Game', Touch.Game);
-	game.state.start('Boot');
-})();
+var playerOneCounter = 0;
+var playerTwoCounter = 0;
+var ctx = document.getElementsByTagName('canvas')[0].getContext('2d');
+
+window.addEventListener("touchstart", handleStart, false);
+//window.addEventListener("touchmove", handleMove, false);
+
+function handleStart(evt){
+	for (var i = evt.touches.length - 1; i >= 0; i--) {
+		var touch = evt.touches[i];
+		var x = evt.touches[i].pageX;
+		var y = evt.touches[i].pageY;
+		if (x>=250){
+			playerTwoCounter+=1;
+			alert(playerOneCounter+" "+playerTwoCounter);
+		}
+		if (x<=250){
+			playerOneCounter+=1;
+			alert(playerOneCounter+" "+playerTwoCounter);
+		}
+	}	
+};
+function handleMove(evt){
+};
 </script>
 </body>
 </html>
