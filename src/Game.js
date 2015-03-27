@@ -24,9 +24,18 @@ Touch.Game.prototype = {
 
 		for (var i=0; i < touches.length; i++) {
 			ongoingTouches.push(copyTouch(touches[i]));
-			var color = colorForTouch(touches[i]);
-			ctx.beginPath();
-    		ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0,2*Math.PI, false);  // a circle at the start
+			if (touches[i]>=0) {
+				var color = "red";
+			}
+			else if (touches[i]>=2) {
+				var color = "green";
+			}
+			else {
+				var color = "black";
+			}
+
+			//ctx.beginPath();
+    		//ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0,2*Math.PI, false);  // a circle at the start
     		ctx.fillStyle = color;
     		ctx.fill();
     		//log("touchstart:"+i+".");
