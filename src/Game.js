@@ -16,24 +16,25 @@ Touch.Game.prototype = {
 		// this.game.debug.body(this.ball);
 		// this.game.debug.body(this.hole);
 	},
-	handleStart: function(e){
+	handleStart: function(evt){
 		evt.preventDefault();
 		var el = document.getElementsByTagName("canvas")[0];
 		var ctx = el.getContext("2d");
+		alert("touchstart:"+i+"...");
 		var touches = evt.changedTouches;
 
 		for (var i=0; i < touches.length; i++) {
-			log("touchstart:"+i+"...");
+			alert("touchstart:"+i+"...");
 			ongoingTouches.push(copyTouch(touches[i]));
 			var color = colorForTouch(touches[i]);
 			ctx.beginPath();
     		ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0,2*Math.PI, false);  // a circle at the start
     		ctx.fillStyle = color;
     		ctx.fill();
-    		log("touchstart:"+i+".");
+    		//log("touchstart:"+i+".");
     	}
     },
-    handleMove: function(e){
+    handleMove: function(evt){
     	evt.preventDefault();
     	var el = document.getElementsByTagName("canvas")[0];
     	var ctx = el.getContext("2d");
@@ -44,20 +45,20 @@ Touch.Game.prototype = {
     		var idx = ongoingTouchIndexById(touches[i].identifier);
 
     		if(idx >= 0) {
-    			log("continuing touch "+idx);
+    			this.//log("continuing touch "+idx);
     			ctx.beginPath();
-    			log("ctx.moveTo("+ongoingTouches[idx].pageX+", "+ongoingTouches[idx].pageY+");");
+    			//log("ctx.moveTo("+ongoingTouches[idx].pageX+", "+ongoingTouches[idx].pageY+");");
     			ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
-    			log("ctx.lineTo("+touches[i].pageX+", "+touches[i].pageY+");");
+    			//log("ctx.lineTo("+touches[i].pageX+", "+touches[i].pageY+");");
     			ctx.lineTo(touches[i].pageX, touches[i].pageY);
     			ctx.lineWidth = 4;
     			ctx.strokeStyle = color;
     			ctx.stroke();
 
       	ongoingTouches.splice(idx, 1, copyTouch(touches[i]));  // swap in the new touch record
-      	log(".");
+      	//log(".");
   		} else {
-  			log("can't figure out which touch to continue");
+  			//log("can't figure out which touch to continue");
   			}
 		}	
 	}
