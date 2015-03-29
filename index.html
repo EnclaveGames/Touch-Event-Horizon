@@ -21,17 +21,18 @@ window.addEventListener("touchmove", handleMove, false);
 window.addEventListener("touchend", handleEnd, false);
 
 function handleStart(evt){
+	evt.preventDefault();
 	ctx.clearRect (0, 0, canvas.width, canvas.height);
 	for (var i = evt.touches.length - 1; i >= 0; i--) {
 		var touch = evt.touches[i];
 		var x = evt.touches[i].pageX;
 		var y = evt.touches[i].pageY;
-		if(x > 240){
+		if(x <= 240){
 			p1Counter++;
 			ctx.fillText("P1: "+ p1Counter, 55, 20);
 			ctx.fillText("P2: "+p2Counter, canvas.width-75, 20);
 		}
-		if(x <= 240){
+		if(x > 240){
 			p2Counter++;
 			ctx.fillText("P1: "+ p1Counter, 55, 20);
 			ctx.fillText("P2: "+p2Counter, canvas.width-75, 20);
@@ -39,6 +40,7 @@ function handleStart(evt){
 	}
 };
 function handleMove(evt){
+	evt.preventDefault();
 	for (var i = evt.touches.length - 1; i >= 0; i--) {
 		var touch = evt.touches[i];
 		var x = evt.touches[i].pageX;
