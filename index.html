@@ -28,22 +28,28 @@ function handleStart(evt){
 		var y = evt.touches[i].pageY;
 		if(x >= canvas.width/2){
 			p1Counter++;
-			ctx.fillText("P1: "+ p1Counter, 5, 20);
-			ctx.fillText("P2: "+p2Counter, canvas.width-25, 20);
+			ctx.fillText("P1: "+ p1Counter, 55, 20);
+			ctx.fillText("P2: "+p2Counter, canvas.width-75, 20);
 		}
 		if(x <= canvas.width/2){
 			p2Counter++;
-			ctx.fillText("P1: "+ p1Counter, 5, 20);
-			ctx.fillText("P2: "+p2Counter, canvas.width-25, 20);
+			ctx.fillText("P1: "+ p1Counter, 55, 20);
+			ctx.fillText("P2: "+p2Counter, canvas.width-75, 20);
 		}
-	}	
+	}
 };
 function handleMove(evt){
-	ctx.beginPath();
-	ctx.fillStyle = "#0095DD";
-	ctx.arc(150,55,20,0,2*Math.PI);
-	ctx.fill();
-	ctx.closePath();
+	for (var i = evt.touches.length - 1; i >= 0; i--) {
+		var touch = evt.touches[i];
+		var x = evt.touches[i].pageX;
+		var y = evt.touches[i].pageY;
+
+		ctx.beginPath();
+		ctx.fillStyle = "#0095DD";
+		ctx.arc(x, y, 20, 0, 2*Math.PI);
+		ctx.fill();
+		ctx.closePath();
+	}
 };
 
 function handleEnd(evt){
