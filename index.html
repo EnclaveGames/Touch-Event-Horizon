@@ -19,6 +19,7 @@ ctx.font = "bold 16px Arial";
 window.addEventListener("touchstart", handleStart, false);
 window.addEventListener("touchmove", handleMove, false);
 window.addEventListener("touchend", handleEnd, false);
+ctx.fillText("Touch to start", canvas.width/2, 70);
 
 function handleStart(evt){
 	evt.preventDefault();
