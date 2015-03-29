@@ -29,9 +29,11 @@ function handleStart(evt){
 		if(x >= canvas.width/2){
 			p1Counter++;
 			ctx.fillText("P1: "+ p1Counter, 5, 20);
+			ctx.fillText("P2: "+p2Counter, canvas.width-25, 20);
 		}
 		if(x <= canvas.width/2){
 			p2Counter++;
+			ctx.fillText("P1: "+ p1Counter, 5, 20);
 			ctx.fillText("P2: "+p2Counter, canvas.width-25, 20);
 		}
 	}	
