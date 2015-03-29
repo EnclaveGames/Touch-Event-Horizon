@@ -34,6 +34,14 @@ function handleStart(evt){
 			p2Counter++;
 		}
 		drawInfo();
+		if(p1Counter == 50) {
+			alert("Player One reached 50 points and WON!");
+			window.location.reload();
+		}
+		else if(p2Counter >= 50) {
+			alert("Player Two reached 50 points and WON!");
+			window.location.reload();
+		}
 	}
 };
 function handleMove(evt){
