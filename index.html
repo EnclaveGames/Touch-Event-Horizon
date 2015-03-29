@@ -29,13 +29,13 @@ function handleStart(evt){
 		var y = evt.touches[i].pageY;
 		if(x <= 240){
 			p1Counter++;
-			ctx.fillText("P1: "+ p1Counter, 55, 20);
-			ctx.fillText("P2: "+p2Counter, canvas.width-75, 20);
+			ctx.fillText("P1: "+ p1Counter, 155, 20);
+			ctx.fillText("P2: "+p2Counter, canvas.width-175, 20);
 		}
 		if(x > 240){
 			p2Counter++;
-			ctx.fillText("P1: "+ p1Counter, 55, 20);
-			ctx.fillText("P2: "+p2Counter, canvas.width-75, 20);
+			ctx.fillText("P1: "+ p1Counter, 155, 20);
+			ctx.fillText("P2: "+p2Counter, canvas.width-175, 20);
 		}
 	}
 };
@@ -48,7 +48,7 @@ function handleMove(evt){
 
 		ctx.beginPath();
 		ctx.fillStyle = "#0095DD";
-		ctx.arc(x, y, 5, 0, 2*Math.PI);
+		ctx.arc(x, y, 10, 0, 2*Math.PI);
 		ctx.fill();
 		ctx.closePath();
 	}
@@ -56,8 +56,8 @@ function handleMove(evt){
 
 function handleEnd(evt){
 	ctx.clearRect (0, 0, canvas.width, canvas.height);
-	ctx.fillText("P1: "+ p1Counter, 55, 20);
-	ctx.fillText("P2: "+p2Counter, canvas.width-75, 20);
+	ctx.fillText("P1: "+ p1Counter, 155, 20);
+	ctx.fillText("P2: "+p2Counter, canvas.width-175, 20);
 }
 
 function drawBar(){
