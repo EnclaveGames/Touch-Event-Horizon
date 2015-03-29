@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Touch Event Horizon</title>
-	<style> body { margin: 0; background: #fff; } canvas { background: #eee; width: 100%; } </style>
+	<style> body { margin: 0; background: #fff; } canvas { background: #eee; } </style>
 </head>
 <body>
 
@@ -26,12 +26,12 @@ function handleStart(evt){
 		var touch = evt.touches[i];
 		var x = evt.touches[i].pageX;
 		var y = evt.touches[i].pageY;
-		if(x >= canvas.width/2){
+		if(x > 240){
 			p1Counter++;
 			ctx.fillText("P1: "+ p1Counter, 55, 20);
 			ctx.fillText("P2: "+p2Counter, canvas.width-75, 20);
 		}
-		if(x <= canvas.width/2){
+		if(x <= 240){
 			p2Counter++;
 			ctx.fillText("P1: "+ p1Counter, 55, 20);
 			ctx.fillText("P2: "+p2Counter, canvas.width-75, 20);
@@ -54,8 +54,8 @@ function handleMove(evt){
 
 function handleEnd(evt){
 	ctx.clearRect (0, 0, canvas.width, canvas.height);
-	ctx.fillText("P1: "+ p1Counter, 5, 20);
-	ctx.fillText("P2: "+p2Counter, canvas.width-25, 20);
+	ctx.fillText("P1: "+ p1Counter, 55, 20);
+	ctx.fillText("P2: "+p2Counter, canvas.width-75, 20);
 }
 
 function drawBar(){
