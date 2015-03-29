@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Touch Event Horizon</title>
-	<style> body { margin: 0; background: #fff; } canvas { background: #eee; display: block; margin: 0 auto; } </style>
+	<style> body { margin: 0; background: #fff; } canvas { background: #eee; width: 100%; } </style>
 </head>
 <body>
 
@@ -14,7 +14,7 @@ var p1Counter = 0;
 var p2Counter = 0;
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-ctx.fillStyle = "white";
+ctx.fillStyle = "#0095DD";
 ctx.font = "bold 16px Arial";
 window.addEventListener("touchstart", handleStart, false);
 window.addEventListener("touchmove", handleMove, false);
